@@ -327,7 +327,7 @@ impl Decimal {
                 }
             }
 
-            Ok(x * y)
+            x.checked_mul(y)
         }
 
         inner(self, exp).map_err(|_| OverflowError {
